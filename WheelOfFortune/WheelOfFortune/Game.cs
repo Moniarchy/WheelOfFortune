@@ -30,7 +30,7 @@ namespace WheelOfFortune
 
         public void SolveTheWord()
         {
-            var word = new Word();
+            var word = new Word("Doggie");
             var guessWord = Console.ReadLine();
             if (guessWord.Equals(word.Answer))
             {
@@ -39,7 +39,7 @@ namespace WheelOfFortune
             }
             else
             {
-                MakeChoice();
+                //MakeChoice();
             } 
         }
 
