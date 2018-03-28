@@ -14,15 +14,36 @@ namespace WheelOfFortune
         //TODO add more consonants
         public readonly static Char[] Consonants = new [] {'b','c','d' };
         public int Turn;
-        public bool IsGameOver;
+        public bool GameOver;
         public int WheelValue;
         public int NoOfPlayer;
 
         public Game()
         {
- 
 
         }
+          
+        public bool IsGameOver()
+        {
+            return GameOver;
+        }
+
+        public void SolveTheWord()
+        {
+            var word = new Word();
+            var guessWord = Console.ReadLine();
+            if (guessWord.Equals(word.Answer))
+            {
+                //Win
+                GameOver = true;
+            }
+            else
+            {
+                MakeChoice();
+            } 
+        }
+
+
 
     }
 }
