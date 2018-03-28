@@ -52,6 +52,7 @@
     <Compile Include="PlayerTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

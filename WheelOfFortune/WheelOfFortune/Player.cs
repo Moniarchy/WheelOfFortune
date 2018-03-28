@@ -9,8 +9,12 @@ namespace WheelOfFortune
     class Player
     {
         public string Name;
-        public int TotalMoney { get; set; }
+        public int GameTotal { get; set; }
 
+        public void UpdateName(string newname)
+        {
+            this.Name = newname;
+        }
 
     }
 }

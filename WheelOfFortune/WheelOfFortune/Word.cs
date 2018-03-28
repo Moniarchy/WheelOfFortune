@@ -12,6 +12,10 @@ namespace WheelOfFortune
         public string[] AlreadyGuessedLetters;
         public string CurrentlyDisplayedString;
 
+        public Word(string answer)
+        {
+            this.Answer = answer;
+        }
         public void HiddenWord()
         {
             //Matt
@@ -22,5 +26,6 @@ namespace WheelOfFortune
             //Areanna
             return "";
         }
+        
     }
 }
