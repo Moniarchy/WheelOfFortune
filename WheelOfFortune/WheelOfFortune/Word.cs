@@ -16,8 +16,7 @@ namespace WheelOfFortune
         {
             this.Answer = answer;
         }
-        public void HiddenWord()
-
+        
         /// <summary>
         /// This is a method that takes a string and converts each char
         /// to and " _ " value
