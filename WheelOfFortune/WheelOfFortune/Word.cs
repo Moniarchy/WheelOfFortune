@@ -26,6 +26,7 @@ namespace WheelOfFortune
             newString[index] = letter;
             CurrentlyDisplayedString= newString.ToString();
 
+            Console.Write(CurrentlyDisplayedString);
             return CurrentlyDisplayedString;
         }
     }

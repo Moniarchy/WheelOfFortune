@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WheelOfFortune
 {
     class GuessLetter
@@ -19,7 +20,8 @@ namespace WheelOfFortune
         {
             if(word.Contains(Char.ToLower(letter)))
             {
-                ShowGuessedLetters();
+                Word newWord = new Word(word);
+                newWord.ShowGuessedLetters(Char.ToLower(letter));
             }
         }
     }
