@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Word word = new Word("Microsoft");
+
+            while (word.CurrentlyDisplayedString.ToLower().Contains('_'))
+            {
+                char guess = GuessLetter.PromptForLetter();
+                GuessLetter.PickLetter(guess, word.CurrentlyDisplayedString);
+            }
         }
     }
 }

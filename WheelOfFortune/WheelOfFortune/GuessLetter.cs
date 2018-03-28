@@ -9,16 +9,17 @@ namespace WheelOfFortune
 {
     class GuessLetter
     {
-        public char PromptForLetter()
+        
+        public static char PromptForLetter()
         {
-            Console.Write("Write a letter: ");
+            Console.Write("Choose a letter: ");
             char letter = Console.ReadLine().ToCharArray()[0];
             return letter;
         }
 
-        public void PickLetter(char letter, string word)
+        public static void PickLetter(char letter, string word)
         {
-            if(word.Contains(Char.ToLower(letter)))
+            if (word.Contains(Char.ToLower(letter)))
             {
                 Word newWord = new Word(word);
                 newWord.ShowGuessedLetters(Char.ToLower(letter));

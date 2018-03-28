@@ -10,7 +10,7 @@ namespace WheelOfFortune
     {
         public string Answer;
         public string[] AlreadyGuessedLetters;
-        public string CurrentlyDisplayedString;
+        public string CurrentlyDisplayedString = "_________";
         public Word(string answer)
         {
             this.Answer = answer;
