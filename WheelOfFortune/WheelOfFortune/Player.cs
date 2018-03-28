@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Player
+    public class Player
     {
-        public string Name;
+        public string Name = "player1";
         public int TotalMoney { get; set; }
 
 
