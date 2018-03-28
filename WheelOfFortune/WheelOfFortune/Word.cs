@@ -19,8 +19,8 @@ namespace WheelOfFortune
 
         public string ShowGuessedLetters()
         {
-            //Areanna
-            return "";
+
+            return ";";
         }
     }
 }

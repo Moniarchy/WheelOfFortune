@@ -29,13 +29,12 @@ namespace WheelOfFortune
             // I believe this player instance needs to be passed to MakeChoice() but we may not need a player for the MVP;
             var player = new Player();
 
-            // Show Puzzle 
-            // currentlyDisplayedString; 
+           // Show Puzzle
+            // currentlyDisplayedString;
 
             while (!IsGameOver)
             {
-                //Until won => MakeChoice();
-
+               // Until won => MakeChoice();
             }
 
 
@@ -43,3 +42,4 @@ namespace WheelOfFortune
 
     }
 }
+
