@@ -19,10 +19,14 @@ namespace WheelOfFortune
         {
             //Matt
         }
-        public string ShowGuessedLetters()
+        public string ShowGuessedLetters(char letter)
         {
-            //Areanna
-            return "";
+            int index = Answer.IndexOf(letter);
+            StringBuilder newString = new StringBuilder(CurrentlyDisplayedString);
+            newString[index] = letter;
+            CurrentlyDisplayedString= newString.ToString();
+
+            return CurrentlyDisplayedString;
         }
     }
 }
