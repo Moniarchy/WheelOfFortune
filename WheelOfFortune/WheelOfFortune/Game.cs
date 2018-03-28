@@ -30,7 +30,7 @@ namespace WheelOfFortune
             var player = new Player();
 
             // Show Puzzle 
-            // ShowGuessedLetters(); 
+            // currentlyDisplayedString; 
 
             while (!IsGameOver)
             {
