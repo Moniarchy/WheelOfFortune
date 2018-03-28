@@ -12,9 +12,19 @@ namespace WheelOfFortune
         public string[] AlreadyGuessedLetters;
         public string CurrentlyDisplayedString;
 
-        public void HiddenWord()
+        /// <summary>
+        /// This is a method that takes a string and converts each char
+        /// to and " _ " value
+        /// </summary>
+        /// <param name="wordToGuess">Takes in the word for the player to guess</param>
+        public static void HideWord(string wordToGuess)
         {
-            //Matt
+            
+            StringBuilder displayToPlayer = new StringBuilder(wordToGuess.Length);
+            for (int i = 0; i < wordToGuess.Length; i++)
+                displayToPlayer.Append(" _ ");
+
+            Console.WriteLine(displayToPlayer);
         }
 
         public string ShowGuessedLetters()
