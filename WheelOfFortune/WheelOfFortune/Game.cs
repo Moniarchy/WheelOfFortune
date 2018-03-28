@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Game
+    public class Game
     {
         //TODO Gettere Setter for each fields
         public int Round { get; set; }
@@ -14,18 +14,13 @@ namespace WheelOfFortune
         //TODO add more consonants
         public readonly static Char[] Consonants = new [] {'b','c','d' };
         public int Turn;
-        public bool GameOver;
+        public bool IsGameOver { get; set; }
         public int WheelValue;
         public int NoOfPlayer;
 
         public Game()
         {
 
-        }
-          
-        public bool IsGameOver()
-        {
-            return GameOver;
         }
 
         public void SolveTheWord()
@@ -35,15 +30,13 @@ namespace WheelOfFortune
             if (guessWord.Equals(word.Answer))
             {
                 //Win
-                GameOver = true;
+                IsGameOver = true;
             }
             else
             {
                 MakeChoice();
             } 
         }
-
-
 
     }
 }
