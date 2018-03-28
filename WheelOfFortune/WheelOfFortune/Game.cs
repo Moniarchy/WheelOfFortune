@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Game
+    public class Game
     {
         //TODO Gettere Setter for each fields
         public int Round { get; set; }
@@ -15,9 +15,13 @@ namespace WheelOfFortune
         public readonly static Char[] Consonants = new [] {'b','c','d' };
         public int Turn;
         public bool GameOver;
+        public bool IsGameOver = false;
         public int WheelValue;
-        public int NoOfPlayer;
+        public int NumOfPlayer;
 
+        /// <summary>
+        ///     Where all game logic stems from. 
+        /// </summary>
         public Game()
         {
 
@@ -42,8 +46,24 @@ namespace WheelOfFortune
                 //MakeChoice();
             } 
         }
+            Console.WriteLine("Welcome to Wheel of Fortune!");
+
+            //Create Player
+            // I believe this player instance needs to be passed to MakeChoice() but we may not need a player for the MVP;
+            var player = new Player();
+
+           // Show Puzzle
+            // currentlyDisplayedString;
+
+            while (!IsGameOver)
+            {
+               // Until won => MakeChoice();
+            }
+
+        }
 
 
 
     }
 }
+
