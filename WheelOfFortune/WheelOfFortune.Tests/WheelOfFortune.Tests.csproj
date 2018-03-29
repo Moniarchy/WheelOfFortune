@@ -52,7 +52,7 @@
     <Compile Include="PlayerTests.cs" />
     <Compile Include="WheelTests.cs" />
     <Compile Include="WordTest.cs" />
-    <Compile Include="Choice.Tests.cs" />
+    <Compile Include="ChoiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
