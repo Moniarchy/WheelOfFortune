@@ -54,6 +54,22 @@ namespace WheelOfFortune
             CurrentlyDisplayedString = string.Join("", newAnswer);
             Console.WriteLine(CurrentlyDisplayedString);
         }
+
+        public bool SolveTheWord(Word word)
+        {
+            Console.WriteLine("Solve: \n");
+            var guessWord = Console.ReadLine();
+            if (guessWord.Equals(word.Answer))
+            {
+                Console.WriteLine("You Won! \n");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! \n");
+                return false;
+            }
+        }
     }
 }
 
