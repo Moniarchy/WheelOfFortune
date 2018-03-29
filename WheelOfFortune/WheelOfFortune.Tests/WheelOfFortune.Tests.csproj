@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockRandomWordFromWordBank.cs" />
     <Compile Include="WordTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
