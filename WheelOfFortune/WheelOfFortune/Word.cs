@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Word
+    public class Word
     {
         public string Answer;
         public string[] AlreadyGuessedLetters;
