@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace WheelOfFortune
 {
-    class Program
+    public class Player
     {
-        static void Main(string[] args)
-        {
-            var game = new Game();
-            game.Start();
-        }
+        public string Name = "player1";
+        public int TotalMoney { get; set; }
+
+
     }
 }
