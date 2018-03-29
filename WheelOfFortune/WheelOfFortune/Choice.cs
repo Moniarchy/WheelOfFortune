@@ -39,12 +39,12 @@ namespace WheelOfFortune
             
             if (!success)
             {
-                throw new InvalidCastException();
+                return "Please choose a number between 1-3!";
             }
 
             if (UserChoice <= 0 || UserChoice > 3)
             {
-                throw new IndexOutOfRangeException();
+                return "Please choose a number between 1-3!";
             }
             else
             {
