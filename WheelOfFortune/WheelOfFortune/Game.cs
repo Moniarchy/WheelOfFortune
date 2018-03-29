@@ -9,21 +9,27 @@ namespace WheelOfFortune
     public class Game
     {
         //TODO Gettere Setter for each fields
-        public int Round { get; set; }
+        public int MaxRound { get; set; }
         public readonly static Char[] Vowels = new [] { 'a', 'e', 'i', 'o', 'u' };
         //TODO add more consonants
         public readonly static Char[] Consonants = new [] {'b','c','d' };
         public int Turn;
         public bool GameOver = false;
-        public int WheelValue;
-        public int NumOfPlayer;
+        private int WheelValue;
+        private int NumOfPlayer;
+        private Wheel wheel;
+        private Player player;
+        private Word word;
+        
 
         /// <summary>
         ///     Game constructor: supposed to initialize 
         /// </summary>
         public Game()
         {
-
+            wheel = new Wheel();
+            player = new Player("TeamMars");
+            word = new Word("Doggie");
         }
           
         public bool IsGameOver()
@@ -33,20 +39,21 @@ namespace WheelOfFortune
 
         public void Start()
         {
-            Console.WriteLine("Welcome to Wheel of Fortune!");
+            Console.WriteLine("Welcome to Wheel of Fortune! \n");
 
             // Show Puzzle
+
             // currentlyDisplayedString;
 
             while (!GameOver)
             {
                 // Until won => MakeChoice();
             }
+
         }
 
         public void SolveTheWord()
         {
-            var word = new Word("Doggie");
             var guessWord = Console.ReadLine();
             if (guessWord.Equals(word.Answer))
             {
@@ -58,7 +65,6 @@ namespace WheelOfFortune
                 //MakeChoice();
             } 
         }
-           
 
     }
 }

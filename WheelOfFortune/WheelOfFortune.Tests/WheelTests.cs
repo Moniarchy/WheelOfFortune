@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WheelOfFortune.Tests
@@ -7,7 +8,7 @@ namespace WheelOfFortune.Tests
     public class WheelTests
     {
         [TestMethod]
-        public void TestConstructor()
+        public void TestInitialState()
         {
             var wheel = new Wheel();
             var expected = 900;
@@ -19,11 +20,15 @@ namespace WheelOfFortune.Tests
         [TestMethod]
         public void TestSpin()
         {
+            //arrange
             var wheel = new Wheel();
-            var expected = wheel.SelectedSpoke;
-            var actual = wheel.Spin();
 
-            Assert.AreEqual(expected, actual);
+            //act
+            var actualSpoke = wheel.Spin();
+
+            //asserrt
+            var result = Wheel.Spokes.Any(x => x == actualSpoke);
+            Assert.IsTrue(result);
         }
     }
 }

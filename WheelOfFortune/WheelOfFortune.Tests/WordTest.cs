@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WheelOfFortune.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest13
     {
         [TestMethod]
         public void HideWordTest()
