@@ -10,24 +10,35 @@ namespace WheelOfFortune
     {
         public string Answer;
         public string[] AlreadyGuessedLetters;
-        public string CurrentlyDisplayedString = "_________";
+        public string CurrentlyDisplayedString= "_________";
         public Word(string answer)
         {
-            this.Answer = answer;
+            this.Answer = "Microsoft";
         }
         public void HideWord()
         {
             //Matt
         }
-        public string ShowGuessedLetters(char letter)
+        public void ShowGuessedLetters(string letter)
         {
-            int index = Answer.IndexOf(letter);
-            StringBuilder newString = new StringBuilder(CurrentlyDisplayedString);
-            newString[index] = letter;
-            CurrentlyDisplayedString= newString.ToString();
-
-            Console.Write(CurrentlyDisplayedString);
-            return CurrentlyDisplayedString;
+            string answer = Answer;
+            string hiddenString = "_________";
+            char[] newAnswer = hiddenString.ToCharArray();
+            char charLetter = Convert.ToChar(letter);
+            var indexes = new List<int>();
+            for (int i = 0; i < answer.Length - 1; i++)
+            {
+                if (answer[i] == charLetter)
+                {
+                    indexes.Add(i);
+                }
+            }
+            foreach (var index in indexes)
+            {
+                newAnswer[index] = charLetter;
+            }
+            Console.WriteLine(newAnswer);
+           
         }
     }
 }

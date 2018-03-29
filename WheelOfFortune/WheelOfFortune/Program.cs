@@ -14,8 +14,7 @@ namespace WheelOfFortune
 
             while (word.CurrentlyDisplayedString.ToLower().Contains('_'))
             {
-                char guess = GuessLetter.PromptForLetter();
-                GuessLetter.PickLetter(guess, word.CurrentlyDisplayedString);
+                string guess = GuessLetter.PromptForLetter();
             }
         }
     }
