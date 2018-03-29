@@ -50,10 +50,13 @@ namespace WheelOfFortune
             foreach (var index in indexes)
             {
                 newAnswer[index] = charLetter;
+
             }
             CurrentlyDisplayedString = string.Join("", newAnswer);
             Console.WriteLine(CurrentlyDisplayedString);
         }
+
+        
     }
 }
 
