@@ -9,7 +9,7 @@ namespace WheelOfFortune
     public class Game
     {
         //TODO Gettere Setter for each fields
-        public int Round { get; set; }
+        public int MaxRound { get; set; }
         public readonly static Char[] Vowels = new [] { 'a', 'e', 'i', 'o', 'u' };
         //TODO add more consonants
         public readonly static Char[] Consonants = new [] {'b','c','d' };
@@ -23,7 +23,12 @@ namespace WheelOfFortune
         /// </summary>
         public Game()
         {
+            NumOfPlayer = 1;
+            MaxRound = 1;
 
+            var player = new Player("Player1");
+            var wheel = new Wheel();
+           // var word = new Word("Doggie");
         }
           
         public bool IsGameOver()
@@ -42,6 +47,7 @@ namespace WheelOfFortune
             {
                 // Until won => MakeChoice();
             }
+
         }
 
         public void SolveTheWord()

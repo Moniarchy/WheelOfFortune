@@ -9,7 +9,7 @@ namespace WheelOfFortune.Tests
         [TestMethod]
         public void TestPlayerConstructor()
         {
-            var player = new Player();
+            var player = new Player("Player1");
             var expectedName = "Player1";
             var expectedTotalMoney = 0;
             Assert.AreEqual(expectedName, player.Name);

@@ -9,7 +9,7 @@ namespace WheelOfFortune
     public class Wheel
     {
         //0 : Lose A Turn   -9: Bankrupt
-        public static List<int> Spokes = new List<int> { 500, 600, 700, 900, 2500, 0, -9 };
+        public static readonly List<int> Spokes = new List<int> { 500, 600, 700, 900, 2500, 0, -9 };
         public int SelectedSpoke { get; set; }
 
         public Wheel()
