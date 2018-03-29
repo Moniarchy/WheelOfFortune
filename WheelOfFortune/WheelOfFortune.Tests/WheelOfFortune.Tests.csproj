@@ -51,8 +51,8 @@
     <Compile Include="GameTests.cs" />
     <Compile Include="PlayerTests.cs" />
     <Compile Include="WheelTests.cs" />
-    <Compile Include="WordTest.cs" />
     <Compile Include="ChoiceTest.cs" />
+    <Compile Include="WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

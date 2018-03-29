@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WheelOfFortune
 {
     public class Game
@@ -20,11 +19,12 @@ namespace WheelOfFortune
         private Wheel wheel;
         private Player player;
         private Word word;
-        
+        public Word word = new Word("Microsoft");
 
         /// <summary>
         ///     Game constructor: supposed to initialize 
         /// </summary>
+
         public Game()
         {
             wheel = new Wheel();
@@ -42,16 +42,12 @@ namespace WheelOfFortune
             Console.WriteLine("Welcome to Wheel of Fortune! \n");
 
             // Show Puzzle
-
             // currentlyDisplayedString;
-
             while (!GameOver)
             {
                 // Until won => MakeChoice();
             }
-
         }
-
         public void SolveTheWord()
         {
             var guessWord = Console.ReadLine();
@@ -65,7 +61,5 @@ namespace WheelOfFortune
                 //MakeChoice();
             } 
         }
-
     }
 }
-

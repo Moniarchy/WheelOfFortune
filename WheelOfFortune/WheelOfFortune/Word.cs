@@ -10,11 +10,11 @@ namespace WheelOfFortune
     {
         public string Answer;
         public string[] AlreadyGuessedLetters;
-        public string CurrentlyDisplayedString;
-
+        public string CurrentlyDisplayedString= "_________";
         public Word(string answer)
         {
-            this.Answer = answer;
+
+            this.Answer = "microsoft";
         }
         
         /// <summary>
@@ -23,6 +23,7 @@ namespace WheelOfFortune
         /// </summary>
         /// <param name="wordToGuess">Takes in the word for the player to guess</param>
         public static void HideWord(string wordToGuess)
+
         {
             
             StringBuilder displayToPlayer = new StringBuilder(wordToGuess.Length);
@@ -30,13 +31,30 @@ namespace WheelOfFortune
                 displayToPlayer.Append(" _ ");
 
             Console.WriteLine(displayToPlayer);
+            //Matt
         }
 
-        public string ShowGuessedLetters()
+        public void ShowGuessedLetters(string letter)
         {
-
-            return ";";
+            string answer = Answer;
+            char[] newAnswer = CurrentlyDisplayedString.ToCharArray();
+            char charLetter = Convert.ToChar(letter);
+            var indexes = new List<int>();
+            for (int i = 0; i <= answer.Length - 1; i++)
+            {
+                if (answer[i] == charLetter)
+                {
+                    indexes.Add(i);
+                }
+            }
+            foreach (var index in indexes)
+            {
+                newAnswer[index] = charLetter;
+            }
+            CurrentlyDisplayedString = string.Join("", newAnswer);
+            Console.WriteLine(CurrentlyDisplayedString);
         }
-        
     }
 }
+
+
