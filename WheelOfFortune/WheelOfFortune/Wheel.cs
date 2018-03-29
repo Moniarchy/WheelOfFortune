@@ -9,12 +9,11 @@ namespace WheelOfFortune
     public class Wheel
     {
         //0 : Lose A Turn   -9: Bankrupt
-        public static readonly List<int> Spokes = new List<int> { 500, 600, 700, 900, 2500, 0, -9 };
+        public static readonly int[] Spokes = new int[] { 500, 600, 700, 900, 2500, 0, -9 };
         public int SelectedSpoke { get; set; }
 
         public Wheel()
         {
-            SelectedSpoke = 900;
         }
 
        /// <summary>
@@ -24,9 +23,19 @@ namespace WheelOfFortune
 
         public int Spin()
         {
-            //TODO : Calculate random no generator from Wheel's options
-            //Set SelectedSpoke
+            SelectedSpoke = GenerateRandomValueFromSpokes();
             return SelectedSpoke;
+        }
+
+        /// <summary>
+        /// Generate dollar value randomly
+        /// </summary>
+        /// <returns> dollar value</returns>
+        private int GenerateRandomValueFromSpokes()
+        {
+            Random rnd = new Random();
+            var rndvalue = Spokes[rnd.Next(0, Spokes.Length)];
+            return rndvalue;
         }
     }
 }

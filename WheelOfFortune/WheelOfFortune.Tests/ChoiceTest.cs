@@ -23,31 +23,33 @@ namespace WheelOfFortune.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void TestTakeOutOfRange()
         {
             //arrange
-            var expected = "7";
-
+            var expected = "Please choose a number between 1-3!";
+            var wrongKey = "7";
 
             //act
-            var range = new Choice();
-            range.TakeChoice(expected);
+            var choice = new Choice();
+            var actual = choice.TakeChoice(wrongKey);
 
             //assert
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidCastException))]
         public void TestTakeOutIfNotInt()
         {
             //arrange
-            var expected = "H";
+            var expected = "Please choose a number between 1-3!";
+            var wrongKey = "H";
+
             //act
-            var range = new Choice();
-            range.TakeChoice(expected);
+            var choice = new Choice();
+            var actual = choice.TakeChoice(wrongKey);
 
             //assert
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
