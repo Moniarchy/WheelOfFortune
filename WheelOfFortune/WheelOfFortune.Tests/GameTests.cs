@@ -12,7 +12,7 @@ namespace WheelOfFortune.Tests
         {
             // arrange
             var game = new Game();
-            var guessWord = "microsoft";
+            var guessWord = "Doggie";
             var sr = new StringReader(guessWord);
             Console.SetIn(sr);
             
