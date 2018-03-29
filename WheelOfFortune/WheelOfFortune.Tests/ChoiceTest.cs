@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WheelOfFortune.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class ChoiceTest
     {
         [TestMethod]
         public void TestMsgsPrint()

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WheelOfFortune
 {
     public class Game
@@ -19,17 +18,19 @@ namespace WheelOfFortune
         private int NumOfPlayer;
         private Wheel wheel;
         private Player player;
-        private Word word;
-        
+        public Word word = new Word("Microsoft");
+        public Choice choice;
 
         /// <summary>
         ///     Game constructor: supposed to initialize 
         /// </summary>
+
         public Game()
         {
             wheel = new Wheel();
             player = new Player("TeamMars");
             word = new Word("Doggie");
+            choice = new Choice();
         }
           
         public bool IsGameOver()
@@ -41,31 +42,28 @@ namespace WheelOfFortune
         {
             Console.WriteLine("Welcome to Wheel of Fortune! \n");
 
-            // Show Puzzle
+            Console.WriteLine("Here's your puzzle: \n");
 
-            // currentlyDisplayedString;
+            // Show Puzzle
+            Console.WriteLine(word.CurrentlyDisplayedString + "\n");
+
+            choice.PrintMsgs();
 
             while (!GameOver)
             {
-                // Until won => MakeChoice();
+
+                var makeChoice = Console.ReadLine();
+                GameOver = choice.TakeChoice(word, makeChoice);
+
+                if (!word.CurrentlyDisplayedString.ToLower().Contains('_'))
+                    GameOver = word.SolveTheWord(word);
+
+                if (!GameOver)
+                   choice.PrintMsgs();
+
             }
-
+         
         }
-
-        public void SolveTheWord()
-        {
-            var guessWord = Console.ReadLine();
-            if (guessWord.Equals(word.Answer))
-            {
-                //Win
-                GameOver = true;
-            }
-            else
-            {
-                //MakeChoice();
-            } 
-        }
-
+        
     }
 }
-
