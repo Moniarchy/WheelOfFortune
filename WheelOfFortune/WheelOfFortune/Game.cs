@@ -17,8 +17,7 @@ namespace WheelOfFortune
         private int WheelValue;
         private int NumOfPlayer;
         private Wheel wheel;
-        private Player player;
-        private Word word;
+        private Player player = new Player("Player 1");
         public Word word = new Word("Microsoft");
 
         /// <summary>
@@ -40,6 +39,12 @@ namespace WheelOfFortune
         public void Start()
         {
             Console.WriteLine("Welcome to Wheel of Fortune! \n");
+            Console.WriteLine("What\'s your name?");
+            string name = Console.ReadLine();
+            player.Name = name;
+            Console.WriteLine($"Thanks for playing, {name}! Let\'s get started!");
+            Console.ReadLine();
+
 
             // Show Puzzle
             // currentlyDisplayedString;
