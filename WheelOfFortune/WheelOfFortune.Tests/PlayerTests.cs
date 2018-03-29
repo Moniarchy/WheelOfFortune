@@ -7,8 +7,13 @@ namespace WheelOfFortune.Tests
     public class PlayerTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestPlayerConstructor()
         {
+            var player = new Player();
+            var expectedName = "Player1";
+            var expectedTotalMoney = 0;
+            Assert.AreEqual(expectedName, player.Name);
+            Assert.AreEqual(expectedTotalMoney, player.TotalMoney);
         }
     }
 }
