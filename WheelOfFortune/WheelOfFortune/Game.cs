@@ -18,7 +18,6 @@ namespace WheelOfFortune
         private int NumOfPlayer;
         private Wheel wheel;
         private Player player;
-        private Word word;
         public Word word = new Word("Microsoft");
 
         /// <summary>
