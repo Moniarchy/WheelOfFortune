@@ -14,13 +14,12 @@ namespace WheelOfFortune
         //TODO add more consonants
         public readonly static Char[] Consonants = new [] {'b','c','d' };
         public int Turn;
-        public bool GameOver;
-        public bool IsGameOver = false;
+        public bool GameOver = false;
         public int WheelValue;
         public int NumOfPlayer;
 
         /// <summary>
-        ///     Where all game logic stems from. 
+        ///     Game constructor: supposed to initialize 
         /// </summary>
         public Game()
         {
@@ -30,6 +29,19 @@ namespace WheelOfFortune
         public bool IsGameOver()
         {
             return GameOver;
+        }
+
+        public void Start()
+        {
+            Console.WriteLine("Welcome to Wheel of Fortune!");
+
+            // Show Puzzle
+            // currentlyDisplayedString;
+
+            while (!GameOver)
+            {
+                // Until won => MakeChoice();
+            }
         }
 
         public void SolveTheWord()
@@ -46,23 +58,7 @@ namespace WheelOfFortune
                 //MakeChoice();
             } 
         }
-            Console.WriteLine("Welcome to Wheel of Fortune!");
-
-            //Create Player
-            // I believe this player instance needs to be passed to MakeChoice() but we may not need a player for the MVP;
-            var player = new Player();
-
-           // Show Puzzle
-            // currentlyDisplayedString;
-
-            while (!IsGameOver)
-            {
-               // Until won => MakeChoice();
-            }
-
-        }
-
-
+           
 
     }
 }
