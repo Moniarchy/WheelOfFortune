@@ -23,10 +23,9 @@ namespace WheelOfFortune.Tests
             // assert
             Assert.AreNotEqual(expected, sw.ToString());
 
-    }
-
+        }
         [TestMethod]
-        public void RandomWordFromWordBankTest()
+        public void RandomWordFromWordBank()
         {
 
             // arrange
@@ -39,8 +38,10 @@ namespace WheelOfFortune.Tests
 
 
             // assert
-            Assert.AreEqual(expected, sw.ToString());
+            Assert.AreNotEqual(expected, sw.ToString());
 
-    }
+        }
+
+       
     }
 }
