@@ -13,7 +13,7 @@ namespace WheelOfFortune
         public string CurrentlyDisplayedString= "_________";
         public Word(string answer)
         {
-            this.Answer = "Microsoft";
+            this.Answer = "microsoft";
         }
         public void HideWord()
         {
@@ -22,11 +22,10 @@ namespace WheelOfFortune
         public void ShowGuessedLetters(string letter)
         {
             string answer = Answer;
-            string hiddenString = "_________";
-            char[] newAnswer = hiddenString.ToCharArray();
+            char[] newAnswer = CurrentlyDisplayedString.ToCharArray();
             char charLetter = Convert.ToChar(letter);
             var indexes = new List<int>();
-            for (int i = 0; i < answer.Length - 1; i++)
+            for (int i = 0; i <= answer.Length - 1; i++)
             {
                 if (answer[i] == charLetter)
                 {
@@ -37,8 +36,8 @@ namespace WheelOfFortune
             {
                 newAnswer[index] = charLetter;
             }
-            Console.WriteLine(newAnswer);
-           
+            CurrentlyDisplayedString = string.Join("", newAnswer);
+            Console.WriteLine(CurrentlyDisplayedString);
         }
     }
 }
