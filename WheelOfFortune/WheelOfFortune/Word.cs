@@ -15,7 +15,7 @@ namespace WheelOfFortune
         public string Answer;
         public string[] AlreadyGuessedLetters;
         public string CurrentlyDisplayedString;
-        public Word(string answer)
+        public Word()
         {
 
             this.Answer = RandomWordFromWordBank();
@@ -32,9 +32,9 @@ namespace WheelOfFortune
             
             StringBuilder displayToPlayer = new StringBuilder(wordToGuess.Length);
             for (int i = 0; i < wordToGuess.Length; i++)
-                displayToPlayer.Append(" _ ");
+                displayToPlayer.Append("_");
 
-            Console.WriteLine(displayToPlayer);
+            // Console.WriteLine(displayToPlayer);
             return displayToPlayer.ToString();
         }
 
@@ -45,7 +45,7 @@ namespace WheelOfFortune
         public static string RandomWordFromWordBank()
         {
             Random random = new Random((int)DateTime.Now.Ticks);
-            string[] wordBank = { "groovie", "ghoulie", "cramps", "bad", "brains", "dead", "kennedys", "milkmen", "crass", "naked", "aggression", "doggie", "apple", "on", "are", "as", "with", "his", "they", "I", "at", "be", "this", "have", "from", "or", "one", "had", "by", "word", "but", "not", "what", "all", "were", "we", "when", "your", "can", "said", "there", "use", "an", "each", "which", "she", "do", "how", "their", "if", "will", "up", "other", "about", "out", "many", "then", "them", "these", "so", "some", "her", "would", "make", "like", "him", "into", "time", "has", "look", "two", "more", "write", "go", "see", "number", "no", "way", "could", "people", "my", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", "day", "did", "get", "come", "made", "may", "part" };
+            string[] wordBank = { "groovie", "ghoulie", "cramps", "bad", "brains", "dead", "kennedys", "milkmen", "crass", "naked", "aggression", "doggie", "apple", "phoenix", "dragon", "wallet", "novel", "target", "sanctum", "zoloft", "violin", "staircase", "magical", "languages", "orange", "microsoft", "musical", "scrabble", "jeopardy", "fortunate", "passport", "azure", "visual", "studio", "windows", "sonder", "mountain" };
             string wordToGuess = wordBank[random.Next(0, wordBank.Length)];
 
             return wordToGuess;

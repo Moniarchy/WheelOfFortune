@@ -17,7 +17,7 @@ namespace WheelOfFortune
         private int NumOfPlayer;
         private Wheel wheel;
         private Player player;
-        public Word word = new Word("Microsoft");
+        public Word word = new Word();
         public Choice choice;
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace WheelOfFortune
                     choice.PrintMsgs();
 
             }
-            Console.WriteLine("The game is over! You can press any key to exit.");
+            Console.WriteLine("The game is over! You can press enter to exit.");
             Console.ReadLine();
 
         }

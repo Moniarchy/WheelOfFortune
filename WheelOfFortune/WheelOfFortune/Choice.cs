@@ -20,7 +20,7 @@ namespace WheelOfFortune
         /// 
         public void PrintMsgs()
         {
-            Console.WriteLine("What would you like to do? \nPlease choose one: \n1) Guess a letter \n2) Guess the word \n3) Exit game");
+            Console.WriteLine("What would you like to do? \n1) Guess a letter \n2) Guess the word \n3) Exit game");
         }
 
         /// <summary>
