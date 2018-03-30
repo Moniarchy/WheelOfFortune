@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WheelOfFortune.Tests
 {
     [TestClass]
-    public class UnitTest13
+    public class WordTest
     {
         [TestMethod]
         public void HideWordTest()
@@ -23,6 +23,25 @@ namespace WheelOfFortune.Tests
             // assert
             Assert.AreNotEqual(expected, sw.ToString());
 
-    }
+        }
+        [TestMethod]
+        public void RandomWordFromWordBank()
+        {
+
+            // arrange
+            var expected = "microsoft";
+            var sw = new StringWriter();
+            Console.SetOut(sw);
+
+            //act
+            Word.RandomWordFromWordBank();
+
+
+            // assert
+            Assert.AreNotEqual(expected, sw.ToString());
+
+        }
+
+       
     }
 }

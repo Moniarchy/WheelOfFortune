@@ -10,67 +10,48 @@ namespace WheelOfFortune
     {
         public string Answer;
         public string[] AlreadyGuessedLetters;
-        public string CurrentlyDisplayedString= "_________";
+        public string CurrentlyDisplayedString;
+
         public Word(string answer)
         {
-
-            this.Answer = "microsoft";
+            this.Answer = answer;
         }
-        
+
+
+
         /// <summary>
         /// This is a method that takes a string and converts each char
         /// to and " _ " value
         /// </summary>
         /// <param name="wordToGuess">Takes in the word for the player to guess</param>
         public static void HideWord(string wordToGuess)
-
         {
-            
             StringBuilder displayToPlayer = new StringBuilder(wordToGuess.Length);
             for (int i = 0; i < wordToGuess.Length; i++)
                 displayToPlayer.Append(" _ ");
 
             Console.WriteLine(displayToPlayer);
-            //Matt
         }
 
-        public void ShowGuessedLetters(string letter)
+        /// <summary>
+        /// This is a method that instantiates Random, takes an array of strings called wordBank and assigns a 
+        /// string called wordToGuess to one of those random string in the array
+        /// </summary>
+        public static void RandomWordFromWordBank()
         {
-            string answer = Answer;
-            char[] newAnswer = CurrentlyDisplayedString.ToCharArray();
-            char charLetter = Convert.ToChar(letter);
-            var indexes = new List<int>();
-            for (int i = 0; i <= answer.Length - 1; i++)
-            {
-                if (answer[i] == charLetter)
-                {
-                    indexes.Add(i);
-                }
-            }
-            foreach (var index in indexes)
-            {
-                newAnswer[index] = charLetter;
-            }
-            CurrentlyDisplayedString = string.Join("", newAnswer);
-            Console.WriteLine(CurrentlyDisplayedString);
+            Random random = new Random((int)DateTime.Now.Ticks);
+            string[] wordBank = { "groovie", "ghoulie", "cramps", "bad", "brains", "dead", "kennedys", "milkmen", "crass", "naked", "aggression", "doggie", "apple", "on", "are", "as", "with", "his", "they", "I", "at", "be", "this", "have", "from", "or", "one", "had", "by", "word", "but", "not", "what", "all", "were", "we", "when", "your", "can", "said", "there", "use", "an", "each", "which", "she", "do", "how", "their", "if", "will", "up", "other", "about", "out", "many", "then", "them", "these", "so", "some", "her", "would", "make", "like", "him", "into", "time", "has", "look", "two", "more", "write", "go", "see", "number", "no", "way", "could", "people", "my", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", "day", "did", "get", "come", "made", "may", "part" };
+            string wordToGuess = wordBank[random.Next(0, wordBank.Length)];
+
+            HideWord(wordToGuess);
+
         }
 
-        public bool SolveTheWord(Word word)
+        public string ShowGuessedLetters()
         {
-            Console.WriteLine("Solve: \n");
-            var guessWord = Console.ReadLine();
-            if (guessWord.Equals(word.Answer))
-            {
-                Console.WriteLine("You Won! \n");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Incorrect! \n");
-                return false;
-            }
+
+            return ";";
         }
+        
     }
 }
-
-
