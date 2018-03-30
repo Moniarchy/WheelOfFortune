@@ -19,7 +19,7 @@ namespace WheelOfFortune
         static void RockOut()
         {
             SoundPlayer soundPlayer = new SoundPlayer();
-            soundPlayer.SoundLocation = @"C:\Users\v-mahunt\source\repos\WheelOfFortune\WheelOfFortune\WheelOfFortune\bgSounds\wof_title_screen_edited.wav";
+            soundPlayer.SoundLocation = "..\\..\\bgSounds\\wof_title_screen_edited.wav";
             soundPlayer.LoadAsync();
             soundPlayer.PlayLooping();
 
