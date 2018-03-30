@@ -12,7 +12,7 @@ namespace WheelOfFortune.Tests
         public void TestShowGuessedLetters()
         {
             //arrange
-            Word word = new Word("Microsoft");
+            Word word = new Word();
             string expectedString = "m________\r\n";
             var sw = new StringWriter();
             Console.SetOut(sw);
