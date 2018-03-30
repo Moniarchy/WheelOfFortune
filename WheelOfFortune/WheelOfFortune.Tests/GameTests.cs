@@ -1,14 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System.IO;
 namespace WheelOfFortune.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class GameTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
     }
 }
