@@ -24,24 +24,38 @@ namespace WheelOfFortune.Tests
             Assert.AreNotEqual(expected, sw.ToString());
 
         }
-        [TestMethod]
-        public void RandomWordFromWordBank()
-        {
 
+        [TestMethod]
+        public void TestSolveTheWordIfGuessIsCorrect()
+        {
             // arrange
-            var expected = "microsoft";
-            var sw = new StringWriter();
-            Console.SetOut(sw);
+            var game = new Game();
+            var guessWord = "microsoft";
+            var sr = new StringReader(guessWord);
+            Console.SetIn(sr);
 
             //act
-            Word.RandomWordFromWordBank();
+            word.SolveTheWord();
 
-
-            // assert
-            Assert.AreNotEqual(expected, sw.ToString());
+            //assert
+            Assert.IsTrue(game.GameOver);
 
         }
 
-       
+        [TestMethod]
+        public void TestSolveTheWordIfGuessIsIncorrect()
+        {
+            // arrange
+            var game = new Game();
+            var guessWord = "macrosoft";
+            var sr = new StringReader(guessWord);
+            Console.SetIn(sr);
+
+            //act
+            word.SolveTheWord();
+
+            //assert
+            Assert.IsFalse(game.GameOver);
+        }
     }
 }

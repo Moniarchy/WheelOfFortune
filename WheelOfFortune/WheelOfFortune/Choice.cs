@@ -20,7 +20,7 @@ namespace WheelOfFortune
         /// 
         public void PrintMsgs()
         {
-            Console.WriteLine("What would you like to do? \n1) Guess a letter \n2) Guess the word \n3) Exit game\n");
+            Console.WriteLine("What would you like to do? \nPlease choose one: \n1) Guess a letter \n2) Guess the word \n3) Exit game");
         }
 
         /// <summary>
@@ -39,12 +39,14 @@ namespace WheelOfFortune
             
             if (!success)
             {
-                return "Please choose a number between 1-3!";
+                Console.WriteLine("Please choose a number between 1-3!");
+                return false;
             }
 
             if (UserChoice <= 0 || UserChoice > 3)
             {
-                return "Please choose a number between 1-3!";
+                Console.WriteLine("Please choose a number between 1-3!");
+                return false;
             }
             else
             {
@@ -83,9 +85,7 @@ namespace WheelOfFortune
                 default:
                     return false;
                     break;
-            }
-
-            
+            }  
         }
     }
 }
