@@ -18,9 +18,9 @@ namespace WheelOfFortune
         /// </summary>
         /// <returns>A string requesting the user type 1, 2, or 3, corresponding to Guess a letter, Guess the word, or Exit </returns>
         /// 
-        public string PrintMsgs()
+        public void PrintMsgs()
         {
-            return "What would you like to do? \nPlease choose one: \n1) Guess a letter \n2) Guess the word \n3) Exit game";
+            Console.WriteLine("What would you like to do? \nPlease choose one: \n1) Guess a letter \n2) Guess the word \n3) Exit game");
         }
 
         /// <summary>
@@ -32,23 +32,25 @@ namespace WheelOfFortune
         /// <param name="num">The user's input, which is hopefully a digit</param>
         /// <returns>A string message to the user (for now)</returns>
         /// 
-        public string TakeChoice(string num)
+        public bool TakeChoice(Word word, string num)
         {
             int UserChoice;
             bool success = int.TryParse(num, out UserChoice);
             
             if (!success)
             {
-                throw new InvalidCastException();
+                Console.WriteLine("Please choose a number between 1-3!");
+                return false;
             }
 
             if (UserChoice <= 0 || UserChoice > 3)
             {
-                throw new IndexOutOfRangeException();
+                Console.WriteLine("Please choose a number between 1-3!");
+                return false;
             }
             else
             {
-                return ActOnChoice(UserChoice);
+                return ActOnChoice(word, UserChoice);
             }
         }
 
@@ -60,28 +62,30 @@ namespace WheelOfFortune
         /// <param name="UserChoice">An int that corresponds to the user's choice of Guess the letter (1), Guess the word (2), or Exit (3)</param>
         /// <returns>Right now, it just returns a string. We will make it call actual actions when we are ready</returns>
 
-        public string ActOnChoice(int UserChoice)
+        public bool ActOnChoice(Word word, int UserChoice)
         {
             switch (UserChoice)
             {
                 case 1:
-                    return "GuessTheLetter();";
+                    Console.WriteLine("Guess a letter: \n");
+                    var letterGuessed = Console.ReadLine();
+                    word.ShowGuessedLetters(letterGuessed);
+                    return false;
                     break;
 
                 case 2:
-                    return "GuessTheWord();";
+                    return word.SolveTheWord(word); ;
                     break;
 
                 case 3:
-                    return "ExitGame();";
+                    Console.WriteLine("Game Over! \n");
+                    return true;
                     break;
 
                 default:
-                    return "Please choose a number.";
+                    return false;
                     break;
-            }
-
-            
+            }  
         }
     }
 }
