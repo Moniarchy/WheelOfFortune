@@ -25,7 +25,7 @@ namespace WheelOfFortune.Tests
 
         }
         [TestMethod]
-        public void RandomWordFromWordBank()
+        public void RandomWordFromWordBankTest()
         {
 
             // arrange
