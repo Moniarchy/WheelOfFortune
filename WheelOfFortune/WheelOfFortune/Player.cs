@@ -8,9 +8,14 @@ namespace WheelOfFortune
 {
     public class Player
     {
-        public string Name = "player1";
+        public string Name { get; set; }
         public int TotalMoney { get; set; }
 
+        public Player(string name)
+        {
+            Name = name;
+            TotalMoney = 0;
+        }
 
     }
 }
